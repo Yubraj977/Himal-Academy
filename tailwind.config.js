@@ -10,12 +10,21 @@ export default {
         'himalb': "url('/himalb.jpeg')",
         
       },
+      fontFamily:{
+        inter: ['Inter', 'sans-serif'],
+        playwrite:["Playwrite NZ", 'cursive'],
+        conden:["Roboto Condensed", 'sans-serif'],
+        lato:["Lato", 'sans-serif'],
+        opensans:["Open Sans", 'sans-serif']
+      },
       spacing:{
         side:'80px',
-        mside:'5px'
+        mside:'15px',
+        top:'75px'
       },
       colors:{
-        main:'#192A56'
+        main:'#192A56',
+        second:'#AE1438'
       }
     },
   },

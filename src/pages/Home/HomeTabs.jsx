@@ -6,7 +6,7 @@ import {
   Tab,
   TabPanel,
 } from "@material-tailwind/react";
- 
+ import science1 from '/science1.png'
 export function HomeTabs() {
   const [activeTab, setActiveTab] = React.useState("Science");
   const data = [
@@ -14,7 +14,7 @@ export function HomeTabs() {
       label: "Science",
       value: "Science",
       desc: `Explore the wonders of science through our immersive curriculum, covering biology, chemistry, and physics. Hands-on experiments and research opportunities fuel curiosity and innovation, preparing students for careers in research, engineering, or healthcare.`,
-      image:'https://plus.unsplash.com/premium_photo-1663099230808-ff36ef2545fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2NpZW5jZSUyMGNsYXNzfGVufDB8fDB8fHww',
+      image:science1,
       apply:''
     },
     {
@@ -67,8 +67,8 @@ export function HomeTabs() {
           <TabPanel key={value} value={value}>
             
             <div className="flex w-full border justify-between lg:px-side gap-8 lg:gap-24 flex-col lg:flex-row">
-            <div className="lg:w-1/2 h-80">
-              <img src={image} alt="" className="h-full w-full object-cover rounded-lg" />
+            <div className="lg:w-1/2 h-80 ">
+              <img src={image} alt="" className="h-full w-full object-contain rounded-lg" />
             </div>
             <div className="lg:w-1/2 lg:py-10">
               <h1 className="font-bold text-4xl text-red-700">{value} Strem</h1>

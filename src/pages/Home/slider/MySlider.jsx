@@ -24,7 +24,7 @@ const content = [
     description:
       "With dedicated teachers and innovative programs, our school cultivates a culture of academic excellence, empowering students to reach their full potential.",
     button: "Apply Now",
-    image: "https://i.pinimg.com/564x/3c/f7/3c/3cf73c387071aa3c7ee83c332c7708c1.jpg",
+    image: "https://images.unsplash.com/photo-1636202339022-7d67f7447e3a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     user: "Erich Behrens",
     userProfile: "https://i.imgur.com/0Clfnu7.png"
   },
@@ -33,7 +33,7 @@ const content = [
     description:
       "Our school actively engages with the local community, fostering partnerships and initiatives that enrich the educational experience and promote social responsibility.",
     button: "Join now",
-    image: "https://images.unsplash.com/photo-1473163928189-364b2c4e1135?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1620003048292-c4db88559488?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     user: "Bruno Vizovskyy",
     userProfile: "https://i.imgur.com/4KeKvtH.png"
   }
@@ -53,7 +53,7 @@ function MySlider() {
           <div className="inner">
             <h1>{item.title}</h1>
             <p className='font-semibold  font-mono'>{item.description}</p>
-            <button className='bg-slate-200 px-4 py-2 rounded-sm'>{item.button}</button>
+            <button className='bg-red-900 text-white font-bold px-4 py-2 rounded-sm'>{item.button}</button>
           </div>
         
         </div>

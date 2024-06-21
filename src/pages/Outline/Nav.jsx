@@ -24,9 +24,10 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const products = [
-  { name: 'Academc Programs', description: 'Get a better quality High quality Education', href: '#', icon: ChartPieIcon },
+  { name: 'Academc Programs', description: 'Get a better quality High quality Education', href: '/programs/acedemic', icon: ChartPieIcon },
   { name: 'Extracurricular Activities', description: 'Beyond Academic for overall Developnment', href: '#', icon: CursorArrowRaysIcon },
   { name: 'Innovation Labs', description: 'For the practical & Research', href: '#', icon: FingerPrintIcon },
   { name: 'Student Led projects', description: 'Innovatie New projects ', href: '#', icon: SquaresPlusIcon },
@@ -43,9 +44,10 @@ function classNames(...classes) {
 
 function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const navigate=useNavigate()
   return (
     <div className='fixed z-50 w-full'>
-      <header className="  lg:top-0 w-full z-50 bg-[#DAE0E2]  shadow-white">
+      <header className="  lg:top-0 w-full z-50 bg-[#DAE0E2]  shadow-white bg-slate-100">
 
         {/* Full Navigation Part For Large screen */}
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:p-3  lg:px-8" aria-label="Global">
@@ -54,7 +56,7 @@ function Nav() {
           <div className="flex lg:flex-1  ">
             <Link to="/" className="-m-1.5 p-1.5 relative">
               <span className=" text-red-900 font-bold text-3xl capitalize  ">HIMAL </span>
-              <span className='text-cyan-700 font-bold text-2xl   border '>ACADEMY</span>
+              <span className='text-cyan-700 font-bold text-2xl    '>ACADEMY</span>
 
               {/* <img className="h-12 w-auto" src={himal} alt="" /> */}
             </Link>
@@ -75,9 +77,9 @@ function Nav() {
 
           {/* Big Screen Navigation Links */}
           <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <Link to="/carrier" className="text-sm font-semibold leading-6 text-gray-900">
               Carrier Paths
-            </a>
+            </Link>
             <Popover className="relative">
               <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
                 Programs
@@ -103,10 +105,10 @@ function Nav() {
                           <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                         </div>
                         <div className="flex-auto">
-                          <a href={item.href} className="block font-semibold text-gray-900">
+                          <Link to={item.href} className="block font-semibold text-gray-900">
                             {item.name}
                             <span className="absolute inset-0" />
-                          </a>
+                          </Link>
                           <p className="mt-1 text-gray-600">{item.description}</p>
                         </div>
                       </div>
@@ -128,16 +130,16 @@ function Nav() {
               </Transition>
             </Popover>
 
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <Link to="/about" className="text-sm font-semibold leading-6 text-gray-900">
               About us
-            </a>
+            </Link>
 
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <Link to="/admission" className="text-sm font-semibold leading-6 text-gray-900">
               Admisions and Aid
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Carrier Paths
-            </a>
+            </Link>
+            <Link to='/facalites' className="text-sm font-semibold leading-6 text-gray-900">
+              Facilites
+            </Link>
           </PopoverGroup>
 
 
@@ -184,12 +186,14 @@ function Nav() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
 
-                <a
-                    href="#"
+                <Link
+                to='/carrier'
+                onClick={()=>setMobileMenuOpen(false)}
+                    
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Features
-                  </a>
+                    Carrier Paths
+                  </Link>
 
                   <Disclosure as="div" className="-mx-3">
                     {({ open }) => (
@@ -207,8 +211,8 @@ function Nav() {
                           {[...products, ...callsToAction].map((item) => (
                             <DisclosureButton
                               key={item.name}
-                              as="a"
-                              href={item.href}
+                              as="Link"
+                              to={item.to}
                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                             >
                               {item.name}
@@ -220,24 +224,28 @@ function Nav() {
                   </Disclosure>
 
 
-                  <a
-                    href="#"
+                  <Link
+                    to="/about"
+                    onClick={()=>setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Features
-                  </a>
-                  <a
-                    href="#"
+                    About us
+                  </Link>
+                  
+                  <Link
+                    to='/admission'
+                    onClick={()=>setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Admisions and Aid
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to='/facalites'
+                    onClick={()=>setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Carrier Paths
-                  </a>
+                      Facilites
+                  </Link>
                 </div>
                 <div className="py-6">
                   <a

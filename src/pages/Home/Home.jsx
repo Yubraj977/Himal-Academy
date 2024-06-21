@@ -5,7 +5,12 @@ import Nav from '../Outline/Nav'
 import AboutHome from './AboutHome'
 import HomeBlogs from './HomeBlogs'
 import HomeTabs from './HomeTabs'
+import { useEffect } from 'react'
 function Home() {
+  useEffect(() => {
+   
+    window.scrollTo(0, 0);
+  }, []);
  
   return (
     <div className=''>
