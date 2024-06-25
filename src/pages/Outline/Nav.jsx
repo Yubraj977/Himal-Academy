@@ -28,10 +28,10 @@ import { useNavigate } from 'react-router-dom'
 
 const products = [
   { name: 'Academc Programs', description: 'Get a better quality High quality Education', href: '/programs/acedemic', icon: ChartPieIcon },
-  { name: 'Extracurricular Activities', description: 'Beyond Academic for overall Developnment', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Innovation Labs', description: 'For the practical & Research', href: '#', icon: FingerPrintIcon },
-  { name: 'Student Led projects', description: 'Innovatie New projects ', href: '#', icon: SquaresPlusIcon },
-  { name: 'Startup challenge', description: 'Chance to present idea and raise support', href: '#', icon: ArrowPathIcon },
+  { name: 'Extracurricular Activities', description: 'Beyond Academic for overall Developnment', href: '/programs/extra', icon: CursorArrowRaysIcon },
+  { name: 'Innovation Labs', description: 'For the practical & Research', href: '/programs/labs', icon: FingerPrintIcon },
+  { name: 'Student Led projects', description: 'Innovatie New projects ', href: '/programs/studentproject', icon: SquaresPlusIcon },
+  { name: 'Startup challenge', description: 'Chance to present idea and raise support', href: '/programs/startup', icon: ArrowPathIcon },
 ]
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },

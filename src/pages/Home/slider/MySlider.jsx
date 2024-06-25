@@ -2,6 +2,8 @@ import React from 'react'
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import we1 from '/we1.png'
+import school3 from '/school/school3.jpeg'
+import school4 from '/school/image.jpg'
 
 
 import Slider from "react-animated-slider";
@@ -14,7 +16,7 @@ const content = [
   {
     title: "Frienldy Environment",
     description:"n the heart of our school lies a vibrant community where kindness reigns supreme and every individual is embraced with open arms. From the bustling classrooms to the serene corners of our campus, a spirit of camaraderie thrives, weaving a tapestry of friendship that knows no bounds.",
-    image:we1,
+    image:school4,
     user: "Luan Gjokaj",
     userProfile: we1,
     button:'Know More'
@@ -41,19 +43,19 @@ const content = [
 
 function MySlider() {
   return (
-    <div className="slide-container ">
+    <div className="slide-container pt-top ">
      
     <Slider className="slider-wrapper"  autoplay='1400' infinite={true} previousButton={<FaAngleRight className='text-4xl text-white mb-40'/>} nextButton={<FaAngleRight className='text-4xl text-white'/>} >
       {content.map((item, index) => (
         <div
           key={index}
-          className="slider-content bg-opacity-15"
+          className="slider-content "
           style={{ background: `url('${item.image}') no-repeat center center ` }}
         >
           <div className="inner">
             <h1>{item.title}</h1>
-            <p className='font-semibold  font-mono'>{item.description}</p>
-            <button className='bg-red-900 text-white font-bold px-4 py-2 rounded-sm'>{item.button}</button>
+            <p className='font-lato text-4xl font-bold  '>{item.description}</p>
+            <button className='bg-red-900  font-bold  text-white px-4 py-2 rounded-sm hover:bg-white hover:text-red-900'>{item.button}</button>
           </div>
         
         </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import school3 from '/school/school3.jpeg'
 
 function AboutSchool() {
   return (
@@ -31,7 +32,8 @@ function AboutSchool() {
         <div className="right lg:w-1/2 border mt-top flex flex-col gap-2">
             <p className='font-opensans'>It is our privilege to lead such a great academic institution consisting of dedicated staff, outstanding students, and an incredible parent community. We thoroughly enjoy watching students grow in an environment that fosters their overall academic and character development. I and Mrs. Bidya Limbu, the founding members, were both in the field of education years before LAS. We were aware of the numerous shortcomings and challenges faced by the private school education system. We took up the challenge to establish a center of learning and directed our passion towards imparting quality education at an affordable rate. It was established with 65 day scholar students in a small rented house. In course of time, LAS grew abundantly in size and stature, expanding into one of the largest academic institutions in the country, offering holistic and quality education from pre-primary to bachelor’s level.</p>
             <p className='font-opensans'>We strongly believe that the assurance of student quality comes from a high–end teaching program, delivered by well-qualified and dedicated teachers who take care to instill not just the knowledge but also the right attitude and skills in the students. Extra and co-curricular activities are an integral part of school life in LAS. The school conducts a range of events from social awareness camps to international cultural exchange programs imparting essential life skills to make them responsible well rounded global citizens.</p>
-            <p className='font-opensans'>Under LA Education Group, there are 10 academic institutions, more than 17,000 students, and 1500 employees. LAS is the best in terms of quality education, state-of-the-art infrastructure, extensive facilities, and a large number of student enrollment. All these efforts have helped LAS to produce excellent academic results, well above national averages.</p>
+            
+           
         </div>
       </div>
 
@@ -121,7 +123,7 @@ function AboutSchool() {
                     <p className="font-normal text-base leading-6 text-gray-600 ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire, and her liberties inviolate; and we will that it be thus observed; which is apparent from</p>
                 </div>
                 <div className="w-full lg:w-8/12 ">
-                    <img className="w-full h-full" src="https://i.ibb.co/FhgPJt8/Rectangle-116.png" alt="A group of People" />
+                    <img className="w-full h-full" src={school3} alt="A group of People" />
                 </div>
             </div>
 

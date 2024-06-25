@@ -12,6 +12,9 @@ import Admissions from './pages/Admissions/Admissions'
 import Programs from './pages/Programs/Programs'
 import Acedemic from './pages/Programs/Acedemic/Acedemic'
 import Facilites from './pages/facilities/Facilites'
+import Extracurricular from './pages/Programs/Extracarriculear/Extracurricular'
+import Startup from './pages/Programs/StartupChallenge/Startup'
+import StudentProjects from './pages/Programs/Projects/StudentProjects'
 function App() {
 
 
@@ -29,6 +32,10 @@ function App() {
         <Route path='/facalites' element={<Facilites />} />
         <Route path='/programs' element={<Programs />}>
           <Route path='acedemic' element={<Acedemic />} />
+          <Route path='extra' element={<Extracurricular />} />
+          <Route path='startup' element={<Startup />} />
+          <Route path='studentproject' element={<StudentProjects />} />
+          <Route path='labs' element={<StudentProjects />} />
         </Route>
 
 
