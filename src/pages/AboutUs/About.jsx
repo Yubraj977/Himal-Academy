@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import SchoolLife from './SchoolLife'
 import AboutSchool from './AboutSchool'
+import Objectives from '../../Alone-Components/Objectives';
 function About() {
   useEffect(() => {
    
@@ -10,7 +11,7 @@ function About() {
     <div className=' px-mside lg:px-side flex flex-col'>
       <AboutSchool/>
       {/* <SchoolLife/> */}
-      
+      <Objectives />
     </div>
   )
 }

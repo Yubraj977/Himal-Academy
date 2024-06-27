@@ -1,5 +1,5 @@
 import React from 'react'
-
+import  { Link } from 'react-router-dom'
 function Footer() {
   return (
     <div>
@@ -116,9 +116,9 @@ function Footer() {
             </li>
 
             <li>
-              <a href="#" className=" transition hover:opacity-75 text-gray-200">
-                Live Chat
-              </a>
+              <Link to="/principalmessage" className=" transition hover:opacity-75 text-gray-200">
+                Principal message
+              </Link>
             </li>
           </ul>
         </div>

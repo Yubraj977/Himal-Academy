@@ -6,6 +6,7 @@ import AboutHome from './AboutHome'
 import HomeBlogs from './HomeBlogs'
 import HomeTabs from './HomeTabs'
 import { useEffect } from 'react'
+import Objectives from '../../Alone-Components/Objectives'
 function Home() {
   useEffect(() => {
    
@@ -17,7 +18,10 @@ function Home() {
       <MySlider />
       <AboutHome />
         <HomeTabs />
+       
         <HomeBlogs />
+      
+
     
 
     </div>

@@ -21,10 +21,12 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
+  ChatBubbleLeftIcon
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+
 
 const products = [
   { name: 'Academc Programs', description: 'Get a better quality High quality Education', href: '/programs/acedemic', icon: ChartPieIcon },
@@ -34,7 +36,7 @@ const products = [
   { name: 'Startup challenge', description: 'Chance to present idea and raise support', href: '/programs/startup', icon: ArrowPathIcon },
 ]
 const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
+  { name: 'Principal Message', href: '/principalmessage', icon: ChatBubbleLeftIcon },
   { name: 'Contact Here', href: 'https://youtube.com/', icon: PhoneIcon },
 ]
 
@@ -44,35 +46,51 @@ function classNames(...classes) {
 
 function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   return (
     <div className='fixed z-50 w-full'>
-      <header className="  lg:top-0 w-full z-50 bg-[#DAE0E2]  shadow-white bg-slate-100">
+      <header className="  lg:top-0 w-full z-50   shadow-white bg-slate-100">
 
         {/* Full Navigation Part For Large screen */}
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:p-3  lg:px-8" aria-label="Global">
 
           {/* Left part mobile and computer screen logos */}
           <div className="flex lg:flex-1  ">
-            <Link to="/" className="-m-1.5 p-1.5 relative">
+            <Link to="/" className="-m-1.5 p-1.5 relative  border-red-950"
+            onClick={() => 
+              {navigate('/')
+                console.log('I m clicked')
+              }}
+            >
               <span className=" text-red-900 font-bold text-3xl capitalize  ">HIMAL </span>
               <span className='text-cyan-700 font-bold text-2xl    '>ACADEMY</span>
 
-              {/* <img className="h-12 w-auto" src={himal} alt="" /> */}
+             
             </Link>
           </div>
           {/* Mobile Screen Open menu logo */}
 
           <div className="flex lg:hidden">
             <button
+             
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className={`opacity-50 z-10 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 ${mobileMenuOpen ? 'hidden' : ''}`}
               onClick={() => setMobileMenuOpen(true)}
             >
 
               <span className="sr-only">Open main menu</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
+            <button
+                type="button"
+
+                className={`z-40 -m-2.5 rounded-md p-2.5 text-gray-700  border-red-500 ${!mobileMenuOpen ? 'hidden' : ''}` }
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            
           </div>
 
           {/* Big Screen Navigation Links */}
@@ -99,16 +117,19 @@ function Nav() {
                     {products.map((item) => (
                       <div
                         key={item.name}
-                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50 "
+
                       >
-                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white ">
                           <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                         </div>
-                        <div className="flex-auto">
-                          <Link to={item.href} className="block font-semibold text-gray-900">
+                        <div className="flex-auto ">
+                          <PopoverButton
+                            as={Link}
+                            to={item.href} className="block font-semibold text-gray-900">
                             {item.name}
                             <span className="absolute inset-0" />
-                          </Link>
+                          </PopoverButton>
                           <p className="mt-1 text-gray-600">{item.description}</p>
                         </div>
                       </div>
@@ -116,14 +137,15 @@ function Nav() {
                   </div>
                   <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                     {callsToAction.map((item) => (
-                      <a
+                      <PopoverButton
+                        as={Link}
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                       >
                         <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
                         {item.name}
-                      </a>
+                      </PopoverButton>
                     ))}
                   </div>
                 </PopoverPanel>
@@ -156,12 +178,16 @@ function Nav() {
 
         </nav>
 
-{/* Mobile Device Navigation */}
+        {/* Mobile Device Navigation */}
         <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          <div className="fixed inset-0 z-10" />
-          <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="fixed inset-0 z-10 border border-red-800" />
+          <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 border-2 border-red-800">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <a href="#" className="-m-1.5 p-1.5"
+              onClick={()=>{
+                navigate('/')
+              }}
+              >
                 <span className="sr-only">Himal Academy</span>
                 <img
                   className="h-8 w-auto"
@@ -175,21 +201,24 @@ function Nav() {
 
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+
+                className="z-40 -m-2.5 rounded-md p-2.5 text-gray-700 border-4 border-red-500"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
                 <XMarkIcon className="h-6 w-6" aria-hidden="true" />
               </button>
+
+
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
 
-                <Link
-                to='/carrier'
-                onClick={()=>setMobileMenuOpen(false)}
-                    
+                  <Link
+                    to='/carrier'
+                    onClick={() => setMobileMenuOpen(false)}
+
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Carrier Paths
@@ -198,7 +227,7 @@ function Nav() {
                   <Disclosure as="div" className="-mx-3">
                     {({ open }) => (
                       <>
-                     
+
                         <DisclosureButton className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                           Programs
                           <ChevronDownIcon
@@ -210,9 +239,13 @@ function Nav() {
                         <DisclosurePanel className="mt-2 space-y-2">
                           {[...products, ...callsToAction].map((item) => (
                             <DisclosureButton
+                            onClick={() => setMobileMenuOpen(false)}
+                            
+                              as={Link}
                               key={item.name}
-                              as="Link"
-                              to={item.to}
+                              to={item.href}
+                            
+                             
                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                             >
                               {item.name}
@@ -226,25 +259,25 @@ function Nav() {
 
                   <Link
                     to="/about"
-                    onClick={()=>setMobileMenuOpen(false)}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     About us
                   </Link>
-                  
+
                   <Link
                     to='/admission'
-                    onClick={()=>setMobileMenuOpen(false)}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Admisions and Aid
                   </Link>
                   <Link
                     to='/facalites'
-                    onClick={()=>setMobileMenuOpen(false)}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                      Facilites
+                    Facilites
                   </Link>
                 </div>
                 <div className="py-6">
