@@ -1,21 +1,25 @@
 import React, { useState } from 'react'
-import library1 from '/features/library1.jpeg'
-function FLibrary() {
+import env1 from '/features/env1.jpeg'
+import env2 from '/features/env2.jpeg'
+import env3 from '/features/env3.jpeg'
+import env4 from '/features/env4.jpeg'
+import env5 from '/features/env5.jpeg'
+
+function Fenvironment() {
     const images1 = [
         {
-          url: library1
+          url: env1
         },
         {
-          url: 'https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80',
-    
+          url: env2
         }, {
-          url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+          url: env3
         },
         {
-          url: 'https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80'
+          url: env4
         },
         {
-          url: 'https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80'
+          url: env5
         }
     
       ]
@@ -23,13 +27,13 @@ function FLibrary() {
   return (
     <div>
       <div className='pt-top flex items-center flex-col px-mside lg:px-side'>
-      <h1 className='mt-top font-bold text-5xl font-playwrite text-second'>Facilities</h1>
-      {/* Numbere One */}
+
       <div className='mt-top '>
-        <h1 className='text-3xl font-lato font-bold text-second'>3d Soft Library</h1>
+        <h1 className='text-3xl font-lato font-bold text-second'>Thriving in Competition and Community</h1>
         <p className='font-lato text-lg lg:text-2xl  mt-6 lg:w-2/3  ml-6 '>
-        it has a well-equipped spacious library that currently boasts of an impressive updated collection of books from all genres. From academic research to classic novels, inspiring autobiographies on great personas and great lives, there is something to grab the interest of every book love
+        At our school, students thrive in a dynamic environment that balances competitive spirit with a supportive community. From academic challenges to extracurricular activities, we foster excellence while nurturing a culture of kindness and collaboration.
         </p>
+
       </div>
 
       {/* iamges */}
@@ -70,4 +74,4 @@ function FLibrary() {
   )
 }
 
-export default FLibrary
+export default Fenvironment

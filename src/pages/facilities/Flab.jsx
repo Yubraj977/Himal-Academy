@@ -1,34 +1,39 @@
 import React, { useState } from 'react'
-import library1 from '/features/library1.jpeg'
-function FLibrary() {
+import lab1 from '/features/lab1.jpeg'
+import lab2 from '/features/lab2.jpeg'
+import lab3 from '/features/lab3.jpeg'
+import lab4 from '/features/lab4.jpeg'
+import lab5 from '/features/lab5.jpeg'
+function Flab() {
     const images1 = [
         {
-          url: library1
+          url: lab5
         },
         {
-          url: 'https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80',
-    
-        }, {
-          url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+          url: lab2
+          
         },
         {
-          url: 'https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80'
+          url:lab3
         },
         {
-          url: 'https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80'
-        }
+          url: lab4
+        },
+        {
+            url: lab1
+          }
     
       ]
       const [currentImage1, setcurrentImage1] = useState(images1[2])
   return (
     <div>
       <div className='pt-top flex items-center flex-col px-mside lg:px-side'>
-      <h1 className='mt-top font-bold text-5xl font-playwrite text-second'>Facilities</h1>
-      {/* Numbere One */}
+    
+     
       <div className='mt-top '>
-        <h1 className='text-3xl font-lato font-bold text-second'>3d Soft Library</h1>
+        <h1 className='text-3xl font-lato font-bold text-second'>Labs for practical </h1>
         <p className='font-lato text-lg lg:text-2xl  mt-6 lg:w-2/3  ml-6 '>
-        it has a well-equipped spacious library that currently boasts of an impressive updated collection of books from all genres. From academic research to classic novels, inspiring autobiographies on great personas and great lives, there is something to grab the interest of every book love
+        Step into our labs and dive into a world of hands-on experimentation and discovery. Equipped with state-of-the-art tools and resources, our labs provide students with the perfect environment to explore scientific principles and unleash their creativity. Whether it's conducting experiments or developing innovative projects, our labs are where curiosity meets innovation.
         </p>
       </div>
 
@@ -70,4 +75,4 @@ function FLibrary() {
   )
 }
 
-export default FLibrary
+export default Flab
