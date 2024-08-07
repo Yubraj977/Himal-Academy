@@ -4,7 +4,8 @@ function Programs() {
     return (
         <div>
             <div className='flex-col pt-20'>
-                <h1 className='font-bold capitalize text-3xl '>Our Programs</h1>
+                {/* <h1 className='font-bold capitalize text-3xl text-center'>Our Programs</h1> */}
+
                 <Outlet/>
             </div>
         </div>

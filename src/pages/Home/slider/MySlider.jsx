@@ -4,7 +4,8 @@ import 'react-slideshow-image/dist/styles.css';
 import we1 from '/we1.png'
 import school3 from '/school/school3.jpeg'
 import school4 from '/school/image.jpg'
-
+import slide1 from '/slides/slide1.jpeg'
+import slide2 from '/slides/slide2.jpg'
 
 import Slider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";
@@ -26,7 +27,8 @@ const content = [
     description:
       "With dedicated teachers and innovative programs, our school cultivates a culture of academic excellence, empowering students to reach their full potential.",
     button: "Apply Now",
-    image: "https://images.unsplash.com/photo-1636202339022-7d67f7447e3a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image:slide2,
+    // image: "https://images.unsplash.com/photo-1636202339022-7d67f7447e3a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     user: "Erich Behrens",
     userProfile: "https://i.imgur.com/0Clfnu7.png"
   },
@@ -35,6 +37,7 @@ const content = [
     description:
       "Our school actively engages with the local community, fostering partnerships and initiatives that enrich the educational experience and promote social responsibility.",
     button: "Join now",
+    // image:slide1,
     image: "https://images.unsplash.com/photo-1620003048292-c4db88559488?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     user: "Bruno Vizovskyy",
     userProfile: "https://i.imgur.com/4KeKvtH.png"
